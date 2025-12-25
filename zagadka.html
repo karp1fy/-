@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Загадка</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #ff69b4;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #d63384;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Загадка</h2>
+  <p>
+    Не путь и не встреча, но шаг к одному,  
+    Где двое рискуют остаться собой.  
+    Там правда важнее любого «почему»,  
+    А пауза громче, чем голос любой.  
+    <br><br>
+    Не числится в датах, не просится в спор,  
+    Но после него тишина не нова.  
+  </p>
+
+  <input type="text" id="answer" placeholder="Твой ответ">
+  <br>
+  <button onclick="checkAnswer()">Ответить</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  function checkAnswer() {
+    const answer = document.getElementById("answer").value.toLowerCase().trim();
+    if (answer === "свидание") {
+      document.getElementById("result").innerText =
+        "Молодец, ДОРОГАЯ 💖\nС меня конфета 🍬";
+    } else {
+      document.getElementById("result").innerText =
+        "Хм… попробуй ещё 😉";
+    }
+  }
+</script>
+
+</body>
+</html>
